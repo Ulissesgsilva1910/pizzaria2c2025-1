@@ -1,22 +1,19 @@
+import{useState, useEffect} from 'react'
+import axios from 'axios'
+
 const Produtos = () => {
 
-<<<<<<< HEAD
-    const pizzas = [
-        'Pizza Mussarela',
-        'Pizza Calabreza',
-        'Pizza Portuguesa',
-        'Pizza Quatro Queijos'
-    ]
+    const [pizzas, setPizzas] = useState([])
 
-=======
-    // Objeto da lista de pizzas
-    const pizzas = [
-        'Pizza Muçarela', 
-        'Pizza Calabreza',
-        'Pizza Portuguesa', 'Pizza Baiana', 'Pizza Frita'
-    ]
+    axios.get("http://172.19.0.49/pizzariaoficial/api/v1/produto")
+    .then(response=>{
+        console.log(response.data)
+    })
+    .catch(errp=>{response.data})
+
+    
     // Iteração da lista de pizzas - pizza a pizza (um a um)
->>>>>>> a07790cb35f4a9ef7bec4c459944b92ffd6ae657
+
     const listaPizzas = pizzas.map(pizza=><li>{pizza}</li>)
 
     return (
